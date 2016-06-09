@@ -14,7 +14,7 @@
 
 
 @echo off
-@echo ----------------»¶Ó­Ê¹ÓÃ TongDeploy Tools---------------
+@echo ----------------æ¬¢è¿Žä½¿ç”¨ TongDeploy Tools---------------
 
 :: setting Env
 set ANT_HOME=%cd%/lib/ant
