@@ -12,8 +12,8 @@
 :: Author:daniel
 :: Email:daniel.yim@live.com
 
-@echo off
 
+@echo off
 @echo ----------------ª∂”≠ π”√ TongDeploy Tools---------------
 
 :: setting Env
@@ -22,8 +22,6 @@ set M2_HOME=%cd%/lib/maven
 set PATH=%ANT_HOME%\bin;$M2_HOME/bin;%PATH%
 
 :: check Java 
-::java -version
-ant -version
-mvn -version
+java -version
 @echo ---------------------Rockontrol Ant---------------------
 cmd.exe

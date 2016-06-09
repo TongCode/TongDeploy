@@ -1,1 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
+<project>
+	<!--
+		
+		主要负责svn的相关任务。
+		
+		Daniel 
+		2016-06-09
+	-->
+	
+	<!-- svn检出项目，使用前需要设置参数 svn.url\svn.user\svn.pwd\svn.dir -->
+	<target name="svn-checkout" description="svn co">
+		<echo message="svn checkout project：${svn.url}"/>
+		<typedef resource="org/tigris/subversion/svnant/svnantlib.xml"/>
+		<svnSetting id="svn.settings" svnkit="true" javahl="false" username="${svn.user}" password="${svn.pwd}" />
+		<svn refid="svn.settings">  
+			<checkout url="${svn.url}" revision="HEAD" destPath="${svn.dir}" />
+			<info target="${svn.dir}" propPrefix="project.svn.info"/>
+		</svn>
+		<echo message="Done: ${svn.dir} commit: ${project.svn.info.lastRev} for ${project.svn.info.lastDate}"/>
+	</target>
+
+</project>

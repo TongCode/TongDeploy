@@ -1,1 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<!--
+		
+		主要负责maven项目的相关任务。
+		
+		Daniel 
+		2016-06-09
+	-->
+	
+	<target name="maven" description="maven">
+		<exec executable="${basedir}/cmd/maven/maven.bat" failonerror="true">
+			<arg line="${maven.exe.path}" />
+			<arg line="${maven.exe.param}" />
+		</exec>
+	</target>
+</project>
