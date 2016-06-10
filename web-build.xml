@@ -24,12 +24,6 @@
 		<antcall target="svn-checkout"/>
 	</target>
 	
-	<!-- NodeJs 安装项目 -->
-	<target name="install" description="npm install">
-		<property name="nodejs.install.path" value="${project.src.dir}" />
-		<antcall target="nodejs-install"/>
-	</target>
-	
 	<!-- NodeJs 项目启动 -->
 	<target name="start" description="web start">
 		<property name="nodejs.start.path" value="${dist.web.dir}" />

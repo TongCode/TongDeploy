@@ -10,5 +10,13 @@
 			</fileset>
 		</copy>
 	</target>
+	
+	<!-- 复制文件 -->
+	<target name="copyfile" description="copy file">
+		<echo message="from ${copy.from}"/>
+		<echo message="to ${copy.to}"/>
+		<copy file="${copy.from}" todir="${copy.to}"></copy>
+	</target>
+
 
 </project>

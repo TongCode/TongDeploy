@@ -156,6 +156,12 @@ under the License.
       <url>http://my.repository.com/repo/path</url>
     </mirror>
      -->
+	 <mirror>  
+       <id>central_mirror</id>  
+       <name>internal central_mirror epository</name>  
+       <url>http://repo1.maven.org/maven2/</url> 
+       <mirrorOf>central</mirrorOf>    
+     </mirror>
   </mirrors>
 
   <!-- profiles
