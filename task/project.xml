@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
+<project>
+	<!--
+		
+		主要负责项目的管理任务。
+		
+		Daniel 
+		2016-06-09
+	-->
+	<property name="projects.dir" value="${basedir}/project" /><!-- 项目工作目录 -->
+	<property name="project.dir" value="${projects.dir}/${ant.project.name}" /><!-- 项目目录 -->
+	<property name="project.src.dir" value="${project.dir}/src" /><!-- 项目代码目录 -->
+	<!-- <property name="project.target.dir" value="${project.dir}/target" />项目目录 -->
 
-<!-- -->
-<target name="pro_create" description="init project folder">
-	<echo message="aaaaa" />
-</target>
+	<!-- 创建项目 -->
+	<target name="pro-create" description="init project folder">
+		<mkdir dir="${projects.dir}"/>
+		<mkdir dir="${project.dir}"/>
+		<mkdir dir="${project.src.dir}"/>
+		<!--<mkdir dir="${project.target.dir}"/>-->
+	</target>
+	
+	<!-- 清除项目生成目录 -->
+	<!--<target name="pro_clean" description="clean project target folder">
+		<delete dir="${project.target.dir}"/>
+		<mkdir dir="${project.target.dir}"/>
+	</target>-->
+	
+	<!-- 删除项目 -->
+	<target name="pro-delete" description="delete project">
+		<delete dir="${project.dir}"/>
+	</target>
+
+</project>

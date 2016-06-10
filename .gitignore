@@ -1,0 +1,8 @@
+*.bak
+
+*.properties
+
+data
+project
+lib/jdk
+lib/maven

@@ -1,1 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<!--
+		
+		主要负责NodeJs项目的相关任务。
+		
+		Daniel 
+		2016-06-09
+	-->
+	
+	<!-- nodejs 项目安装依赖包 -->
+	<target name="nodejs-install" description="npm install" >
+		<echo message="npm install" />
+		<exec dir="${project.src.dir}" executable="/bin/sh" failonerror="true">
+			<arg value="-c" />
+			<arg value="npm install" />
+		</exec>
+	</target>
+	
+
+	<!-- nodejs 使用forever启动项目 -->
+	<target name="nodejs-start" description="forever start">
+		<exec dir="${nodejs.start.path}" executable="/bin/sh" failonerror="true">
+			<arg value="-c" />
+			<arg value="forever start ${nodejs.start.param}" />
+		</exec>
+	</target>
+	
+	<!-- nodejs 使用 forever停止项目 -->
+	<target name="nodejs-stop" description="forever stopall">
+		<exec executable="/bin/sh" failonerror="true">
+			<arg value="-c" />
+			<arg value="forever stopall" />
+		</exec>
+	</target>
+
+</project>

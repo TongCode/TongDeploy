@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<!--
+		
+		主要负责Tomcat的相关任务。
+		
+		Daniel 
+		2016-06-09
+	-->
+	
+	<!-- tomcat 停止服务 -->
+	<target name="tomcat-shutdown" description="tomcat shutdown">
+		 <exec executable="${tomcat.path}\\bin\\shutdown.sh" failonerror="false">
+			<env key="CATALINA_HOME" path="${tomcat.path}"/>
+		 </exec>
+		 <!--<sleep seconds="3"/>-->
+	</target>
+	
+	<!-- tomcat 启动服务 -->
+	<target name="tomcat-startup" description="tomcat startup">
+		<!--<sleep seconds="3"/>-->
+		<exec executable="${tomcat.path}\\bin\\startup.sh" failonerror="true">
+			<env key="CATALINA_HOME" path="${tomcat.path}"/>  
+		</exec>
+	</target>
+	
+	<!-- tomcat 清除日志 -->
+	<target name="tomcat-cleanlogs" description="tomcat clean logs">
+		<delete dir="${tomcat.path}\\logs"/>
+		<mkdir dir="${tomcat.path}\\logs"/>
+	</target>
+
+	<!-- tomcat 清除项目 -->
+	<target name="tomcat-clean" description="tomcat clean project">
+		<delete dir="${tomcat.webapp.path}\\${tomcat.webapp.name}"/>
+		<delete file="${tomcat.webapp.path}\\${tomcat.webapp.name}.war"/>
+	</target>
+
+</project>

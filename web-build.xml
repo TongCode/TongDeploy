@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="cywh-web" basedir="." default="help">
+	
+	<import file="task/project.xml"/>
+	<import file="task/svn.xml"/>
+	<import file="task/nodejs.xml"/>
+	<import file="task/file.xml"/>
+
+
+	<!-- 项目参数配置 -->
+	<property file="${basedir}/build.properties" />
+
+	<!-- 初始化项目空间 -->
+	<target name="init" description="init projet">
+		<antcall target="pro-create"/>
+	</target>
+	
+	<!-- 初始化项目代码 -->
+	<target name="checkout" description="svn checkout">
+		<property name="svn.url" value="${svn.web.url}" />
+		<property name="svn.user" value="${svn.web.user}" />
+		<property name="svn.pwd" value="${svn.web.pwd}" />
+		<property name="svn.dir" value="${project.src.dir}" />
+		<antcall target="svn-checkout"/>
+	</target>
+	
+	<!-- NodeJs 项目启动 -->
+	<target name="start" description="web start">
+		<property name="nodejs.start.path" value="${dist.web.dir}" />
+		<property name="nodejs.start.param" value="bin/www" />
+		<antcall target="nodejs-start"/>
+	</target>
+	
+	<!-- Web 项目部署 -->
+	<target name="deploy" description="web deploy" depends="checkout">
+		<echo message="deploy project..."/>
+		<property name="copy.to" value="${dist.web.dir}" />
+		<property name="copy.from" value="${project.src.dir}" />
+		<antcall target="copydir"/>
+	</target>
+	
+	<!-- 项目自动部署 -->
+	<target name="auto" description="自动部署" depends="nodejs-stop,deploy,start">
+		<echo message="部署完成，谢谢您的使用！"/>
+	</target>
+</project>

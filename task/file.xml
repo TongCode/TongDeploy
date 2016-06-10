@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<!-- 复制文件夹 -->
+	<target name="copydir" description="copy dir">
+		<echo message="from ${copy.from}"/>
+		<echo message="to ${copy.to}"/>
+		<copy todir="${copy.to}">
+			<fileset dir="${copy.from}">
+			</fileset>
+		</copy>
+	</target>
+	
+	<!-- 复制文件 -->
+	<target name="copyfile" description="copy file">
+		<echo message="from ${copy.from}"/>
+		<echo message="to ${copy.to}"/>
+		<copy file="${copy.from}" todir="${copy.to}"></copy>
+	</target>
+
+
+</project>

@@ -1,1 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<!--
+		
+		主要负责maven项目的相关任务。
+		
+		Daniel 
+		2016-06-09
+	-->
+	
+	<!-- 调用maven命令 -->
+	<target name="maven" description="maven">
+		<exec dir="${project.src.dir}" executable="/bin/sh" failonerror="true">
+			<arg value="-c" />
+			<arg value="mvn ${maven.exe.param}" />
+		</exec>
+	</target>
+	
+	<!-- maven clean -->
+	<target name="maven-clean" description="maven clean">
+		<echo message="mvn clean" />
+		<exec dir="${project.src.dir}" executable="/bin/sh" failonerror="true">
+			<arg value="-c" />
+			<arg value="mvn clean" />
+		</exec>
+	</target>
+
+	<!-- maven compile -->
+	<target name="maven-compile" description="maven compile">
+		<echo message="mvn compile" />
+		<exec dir="${project.src.dir}" executable="/bin/sh" failonerror="true">
+			<arg value="-c" />
+			<arg value="mvn compile" />
+		</exec>
+	</target>
+	
+	<!-- maven install -->
+	<target name="maven-install" description="maven install">
+		<echo message="mvn install" />
+		<exec dir="${project.src.dir}" executable="/bin/sh" failonerror="true">
+			<arg value="-c" />
+			<arg value="mvn install" />
+		</exec>
+	</target>
+	
+	<!-- maven deploy -->
+	<target name="maven-deploy" description="maven deploy">
+		<echo message="mvn deploy" />
+		<exec dir="${project.src.dir}" executable="/bin/sh" failonerror="true">
+			<arg value="-c" />
+			<arg value="mvn deploy" />
+		</exec>
+	</target>
+	
+	<!-- maven package -->
+	<target name="maven-package" description="maven package">
+		<echo message="mvn package" />
+		<exec dir="${project.src.dir}" executable="/bin/sh" failonerror="true">
+			<arg value="-c" />
+			<arg value="mvn package" />
+		</exec>
+	</target>
+
+</project>
