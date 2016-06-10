@@ -17,10 +17,12 @@
 echo --------------欢迎使用 TongDeploy Tools---------------
 
 # setting Env
-export JAVA_HOME=$(pwd)/lib/jdk
+
 export ANT_HOME=$(pwd)/lib/ant
 export M2_HOME=$(pwd)/lib/maven
-export PATH=$ANT_HOME/bin:$M2_HOME/bin:$JAVA_HOME/bin:$PATH
+#export JAVA_HOME=$(pwd)/lib/jdk
+export PATH=$ANT_HOME/bin:$M2_HOME/bin:$PATH
+#export PATH=$ANT_HOME/bin:$M2_HOME/bin:$JAVA_HOME/bin:$PATH
 
 # init
 chmod 775 $ANT_HOME/bin/*
