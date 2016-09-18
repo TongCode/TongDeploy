@@ -1,4 +1,4 @@
-ï»¿:: ** TongDeploy Tools **
+:: ** TongDeploy Tools **
 
 ::
 
@@ -13,21 +13,22 @@
 :: Email:daniel.yim@live.com
 
 
-@echo off
-@echo
-@echo ----------------æ¬¢è¿ä½¿ç”¨ TongDeploy Tools---------------
-@echo
+echo off
+echo
+echo ----------------»¶Ó­Ê¹ÓÃ TongDeploy Tools---------------
+echo
 
 :: setting Env
 set ANT_HOME=%cd%/lib/ant
-set M2_HOME=%cd%/lib/maven
-set PATH=%ANT_HOME%\bin;$M2_HOME/bin;%PATH%
+:: set M2_HOME=%cd%/lib/maven
+:: set PATH=%ANT_HOME%\bin;$M2_HOME/bin;%PATH%
+set PATH=%ANT_HOME%\bin;%PATH%
 
 :: check Java 
 java -version
-@echo
-@echo ç¯å¢ƒæ£€æµ‹ä¿¡æ¯å¦‚ä¸Šï¼Œè¯·å°½æƒ…äº«ç”¨å§...
-@echo ---------------Tongtech Deploy-----V2.0----------------
-@echo
-@echo
+echo
+echo »·¾³¼ì²âĞÅÏ¢ÈçÉÏ£¬Çë¾¡ÇéÏíÓÃ°É...
+echo ---------------Tongtech Deploy-----V2.0----------------
+echo
+echo
 cmd.exe
